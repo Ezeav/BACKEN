@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "express": "^5.2.1",
+    "express-handlebars": "^8.0.3",
+    "handlebars": "^4.7.8",
+    "multer": "^2.0.2",
+    "socket.io": "^4.8.1",
+    "uuid": "^13.0.0",
+    "websocket": "^1.0.35"
+  }
+}

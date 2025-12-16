@@ -1,0 +1,87 @@
+[
+  {
+    "id": 1,
+    "title": "Auriculares Bluetooth",
+    "description": "Auriculares inalámbricos con micrófono",
+    "code": "AUR123",
+    "price": 15000,
+    "status": true,
+    "stock": 25,
+    "category": "audio",
+    "thumbnails": [
+      "img/auriculares1.jpg"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Mouse Gamer RGB",
+    "description": "Mouse con 7 botones programables y luces RGB",
+    "code": "MOU456",
+    "price": 12000,
+    "status": true,
+    "stock": 40,
+    "category": "perifericos",
+    "thumbnails": [
+      "img/mouse1.jpg"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Teclado Mecánico",
+    "description": "Teclado mecánico con switches blue",
+    "code": "TEC789",
+    "price": 28000,
+    "status": true,
+    "stock": 18,
+    "category": "perifericos",
+    "thumbnails": [
+      "img/teclado1.jpg"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Monitor 24 pulgadas",
+    "description": "Monitor LED 1080p",
+    "code": "MON321",
+    "price": 95000,
+    "status": true,
+    "stock": 10,
+    "category": "monitores",
+    "thumbnails": [
+      "img/monitor1.jpg"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Parlante portátil",
+    "description": "Parlante Bluetooth resistente al agua",
+    "code": "PAR654",
+    "price": 22000,
+    "status": true,
+    "stock": 30,
+    "category": "audio",
+    "thumbnails": [
+      "img/parlante1.jpg"
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Mesa de roble oscuro",
+    "description": "Mesa rigida y grande",
+    "code": "MES456",
+    "price": 23000,
+    "status": true,
+    "stock": 5,
+    "category": "muebles",
+    "thumbnails": [
+      ""
+    ]
+  },
+  {
+    "id": "280ee822-2f62-4a0d-b994-adf351bc3b05",
+    "nombre": "franklin saint",
+    "description": "dasdsadsa",
+    "stock": "50",
+    "image": "public\\uploads\\saint.png"
+  }
+]

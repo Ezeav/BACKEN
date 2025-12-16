@@ -1,0 +1,72 @@
+<h1>Productos en Tiempo Real</h1>
+<p>Esta lista se actualiza automáticamente cuando se crean o eliminan productos</p>
+
+<div id="products-container">
+  {{#if products}}
+    <ul>
+      {{#each products}}
+        <li data-product-id="{{this.id}}">
+          <h3>{{this.title}}</h3>
+          <p>Descripción: {{this.description}}</p>
+          <p>Precio: ${{this.price}}</p>
+          <p>Stock: {{this.stock}}</p>
+          <p>Categoría: {{this.category}}</p>
+          <p>ID: {{this.id}}</p>
+          <button onclick="deleteProduct('{{this.id}}')">Eliminar</button>
+        </li>
+      {{/each}}
+    </ul>
+  {{else}}
+    <p>No hay productos disponibles</p>
+  {{/if}}
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  const socket = io();
+  
+  socket.on('producto-agregado', (producto) => {
+    agregarProductoALista(producto);
+  });
+  
+  socket.on('producto-eliminado', (productId) => {
+    eliminarProductoDeLista(productId);
+  });
+  
+  function agregarProductoALista(producto) {
+    const container = document.getElementById('products-container');
+    const ul = container.querySelector('ul') || document.createElement('ul');
+    const li = document.createElement('li');
+    li.setAttribute('data-product-id', producto.id);
+    const title = producto.title || producto.name || 'Sin título';
+    li.innerHTML = `
+      <h3>${title}</h3>
+      <p>Descripción: ${producto.description}</p>
+      <p>Precio: $${producto.price}</p>
+      <p>Stock: ${producto.stock}</p>
+      <p>Categoría: ${producto.category || 'Sin categoría'}</p>
+      <p>ID: ${producto.id}</p>
+      <button onclick="deleteProduct('${producto.id}')">Eliminar</button>
+    `;
+    ul.appendChild(li);
+    if (!container.querySelector('ul')) {
+      container.appendChild(ul);
+    }
+  }
+  
+  function eliminarProductoDeLista(productId) {
+    const li = document.querySelector(`[data-product-id="${productId}"]`);
+    if (li) {
+      li.remove();
+    }
+  }
+  
+  async function deleteProduct(id) {
+    try {
+      await fetch(`/api/products/${id}`, { method: 'DELETE' });
+    } catch (error) {
+      console.error('Error al eliminar producto:', error);
+    }
+  }
+</script>
+

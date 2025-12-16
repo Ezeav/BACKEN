@@ -1,0 +1,8 @@
+# Carpetas de Node
+node_modules/
+
+# Archivos de log
+*.log
+
+# Archivos de configuración locales
+.env
